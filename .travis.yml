@@ -1,0 +1,9 @@
+language : haskell
+ghc : 7.6.3
+install : 
+  - 'cabal install purescript'
+  - "npm install bower gulp -g"
+  - 'npm install'
+  - 'bower install'
+script : 
+  - 'gulp test'
