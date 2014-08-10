@@ -1,18 +1,18 @@
 {
-  "name": "purescript-timers",
+  "name": "purescript-events",
   "version": "0.0.1",
-  "homepage": "https://github.com/CapillarySoftware/purescript-timers",
+  "homepage": "https://github.com/CapillarySoftware/purescript-events",
   "authors": [
     "Isaac Shapira <fresheyeball@gmail.com>"
   ],
-  "description": "Native timer bindings for PureScript",
-  "main": "src/Control/Reactive/Timer.purs",
+  "description": "Custom Native Events",
+  "main": "src/Control/Reactive/Event.purs",
   "keywords": [
     "Purescript",
-    "Timer",
+    "Event",
     "Reactive",
-    "setTimeout",
-    "setInterval"
+    "CustomEvents",
+    "Emitter"
   ],
   "license": "MIT",
   "dependencies": {
