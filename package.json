@@ -1,0 +1,14 @@
+{
+  "devDependencies": {
+    "karma": "~0.12.21",
+    "mocha": "~1.21.4",
+    "karma-mocha": "~0.1.7",
+    "karma-phantomjs-launcher": "~0.1.4",
+    "gulp-karma": "0.0.4",
+    "gulp-purescript": "0.0.9",
+    "gulp": "~3.8.7",
+    "run-sequence": "~0.3.6",
+    "gulp-if": "~1.2.4",
+    "gulp-concat": "~2.3.4"
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "name": "purescript-timers",
+  "version": "0.0.1",
+  "homepage": "https://github.com/CapillarySoftware/purescript-timers",
+  "authors": [
+    "Isaac Shapira <fresheyeball@gmail.com>"
+  ],
+  "description": "Native timer bindings for PureScript",
+  "main": "src/Control/Reactive/Timer.purs",
+  "keywords": [
+    "Purescript",
+    "Timer",
+    "Reactive",
+    "setTimeout",
+    "setInterval"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "purescript-easy-ffi": "~1.0.1",
+    "purescript-reactive": "*"
+  },
+  "ignore": [
+    "**/.*",
+    "bower_components",
+    "node_modules",
+    "tmp",
+    "bower.json",
+    "gulpfile.js",
+    "package.json"
+  ],
+  "devDependencies": {
+    "purescript-mocha": "*",
+    "purescript-chai": "*",
+    "purescript-timers": "*"
+  }
+}
