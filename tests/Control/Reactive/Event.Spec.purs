@@ -40,7 +40,7 @@ spec = describe "Control.Monad.Event" $ do
     unsubscribe sub     
     emit sampleEvent
 
-    timeout 10 \_ -> do
+    timeout 10 $ do
       isSubbed' <- readSTRef isSubbed
       expect isSubbed' `toEqual` false
       return $ itIs done

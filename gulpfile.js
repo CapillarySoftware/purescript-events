@@ -32,15 +32,15 @@ gulp.task('build:test', function(){
 });
 
 gulp.task('docgen', function(){
-  gulp.src("src/**/*.purs")
+  return gulp.src("src/**/*.purs")
     .pipe(purescript.docgen())
     .pipe(gulp.dest("README.md"));
 });
 
 gulp.task('test:unit',function(){
-  setTimeout(function(){
-    gulp.src(dest.path+dest.file).pipe(karma);  
-  }, 2000);  
+  return setTimeout(function(){
+    return gulp.src(dest.path+dest.file).pipe(karma); 
+  }, 2000);
 });
 
 gulp.task('test', function(){ runSq('build:test', 'test:unit'); });
