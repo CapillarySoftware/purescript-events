@@ -31,7 +31,7 @@ gulp.task('build:test', function(){
     .pipe(gulp.dest(dest.path));
 });
 
-gulp.task('docgen', function(){
+gulp.task('doc', function(){
   return gulp.src("src/**/*.purs")
     .pipe(purescript.docgen())
     .pipe(gulp.dest("README.md"));
