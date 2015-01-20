@@ -29,7 +29,7 @@ spec = describe "Control.Monad.Event" do
     emitOn sampleEvent w
 
   itAsync "emit and subscribeEvented should be global" \done -> do
-    subscribeEvented "foo" (const $ itIs done)
+    subscribeEvented "foo" <<< const $ itIs done
     emit sampleEvent
 
   itAsync "unsubscribe cancels a subscription" \done -> do
@@ -43,7 +43,6 @@ spec = describe "Control.Monad.Event" do
       isSubbed' <- readSTRef isSubbed
       expect isSubbed' `toEqual` false
       itIs done
-
   it "eventDMap maps over the details data passing area"
     let
       gadget = "gadget"

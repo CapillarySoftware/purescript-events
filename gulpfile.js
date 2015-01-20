@@ -5,7 +5,6 @@ runSq      = require('run-sequence'),
 karma      = require('gulp-karma'),
 gulpif     = require('gulp-if'),
 concat     = require('gulp-concat'),
-mocha      = require('gulp-mocha'),
 
 src        = ['bower_components/purescript-*/src/**/*.purs',
               'bower_components/chai/chai.js',
@@ -32,7 +31,7 @@ gulp.task('build:test', function(){
     .pipe(gulp.dest(dest.path));
 });
 
-gulp.task('docgen', function(){
+gulp.task('doc', function(){
   return gulp.src("src/**/*.purs")
     .pipe(purescript.docgen())
     .pipe(gulp.dest("README.md"));
