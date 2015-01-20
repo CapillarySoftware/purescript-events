@@ -1,4 +1,4 @@
-var 
+var
 gulp       = require('gulp'),
 purescript = require('gulp-purescript'),
 runSq      = require('run-sequence'),
@@ -19,7 +19,7 @@ psc        = purescript.psc({
               main        : true,
               output      : dest.file
             }),
-karma      = karma({              
+karma      = karma({
               configFile  : "./tests/karma.conf.js",
               action      : "run"
             });
@@ -39,7 +39,7 @@ gulp.task('doc', function(){
 
 gulp.task('test:unit',function(){
   return setTimeout(function(){
-    return gulp.src(dest.path+dest.file).pipe(karma); 
+    return gulp.src(dest.path+dest.file).pipe(karma);
   }, 2000);
 });
 
