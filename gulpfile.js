@@ -1,10 +1,11 @@
-var 
+var
 gulp       = require('gulp'),
 purescript = require('gulp-purescript'),
 runSq      = require('run-sequence'),
 karma      = require('gulp-karma'),
 gulpif     = require('gulp-if'),
 concat     = require('gulp-concat'),
+mocha      = require('gulp-mocha'),
 
 src        = ['bower_components/purescript-*/src/**/*.purs',
               'bower_components/chai/chai.js',
@@ -19,7 +20,7 @@ psc        = purescript.psc({
               main        : true,
               output      : dest.file
             }),
-karma      = karma({              
+karma      = karma({
               configFile  : "./tests/karma.conf.js",
               action      : "run"
             });
@@ -39,7 +40,7 @@ gulp.task('docgen', function(){
 
 gulp.task('test:unit',function(){
   return setTimeout(function(){
-    return gulp.src(dest.path+dest.file).pipe(karma); 
+    return gulp.src(dest.path+dest.file).pipe(karma);
   }, 2000);
 });
 
