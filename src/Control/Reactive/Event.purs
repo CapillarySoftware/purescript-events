@@ -36,7 +36,9 @@ newEvent n d = Event n {
   detail     : d
 }
 
+unwrapEventDetail :: forall d. Event d -> { | d}
 unwrapEventDetail (Event n d) = d.detail
+unwrapEventName   :: forall d. Event d -> EventName
 unwrapEventName   (Event n d) = n
 
 -- Shamlessly ripped off from
@@ -72,6 +74,7 @@ foreign import emitOn_ """
   }
 """ :: forall d o eff. Fn3 EventName { | d} o (EffR eff o)
 
+emitOn :: forall d o eff. Event d -> o -> EffR eff o 
 emitOn (Event n d) o = runFn3 emitOn_ n d o
 
 foreign import subscribeEventedOn_ """
@@ -100,5 +103,7 @@ foreign import unsubscribe """
   }
 """ :: forall eff. Subscription -> EffR eff Unit
 
+emit :: forall d eff. Event d -> EffR eff Context
 emit ev              = getContext >>= emitOn ev
+subscribeEvented :: forall a d eff. EventName -> (Event d -> EffR eff a) -> EffR eff Subscription
 subscribeEvented n f = getContext >>= subscribeEventedOn n f
