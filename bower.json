@@ -16,7 +16,6 @@
   ],
   "license": "MIT",
   "dependencies": {
-    "purescript-easy-ffi": "~1.0.1",
     "purescript-reactive": "*",
     "purescript-context": "~0.0.3"
   },
